@@ -1,6 +1,14 @@
 # MIS40750AirlineSeating
 Analytics Research And Implementation
 
+##Declaration
+This project is work of the following team members:
+
+| Name              | Student ID   |
+| ------------------|:-------------|
+| Ashish Kumar      | 16200120     |
+| Apoorva Taneja    | 16200140     |
+
 ###1.Database Structure
 
 The program assumes the following database structure:
