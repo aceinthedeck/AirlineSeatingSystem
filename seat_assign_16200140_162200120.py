@@ -1,6 +1,7 @@
 import sqlite3
 import csv
 import sys
+import os.path
 
 
 
@@ -312,15 +313,34 @@ class seatAllocator(database):
 			print("booking refused till now {}".format(self.bookingsRefused))
 		
 
-dbName='data.db'
-bookingsFile='booking_1.csv'
+
+
+
+
+
+
+
+
+
+if len(sys.argv)!=2:
+	dbName=sys.argv[1]
+	bookingsFile=sys.argv[2]
+else:
+	print("Insufficient number of command line arguments.")
+	print("The correct format is <database name> <bookings csv file name>")
+	exit()
+
+if  not os.path.exists(dbName):
+	print("Database file doesn't exists")
+	exit()
+
+if  not os.path.exists(bookingsFile):
+	print("CSV file doesn't exists")
+	exit()
+
 database=database(dbName)
 rows=database.getRows()
 cols=database.getColumns()
-
-
-for args in sys.argv:
-	print(args)
 
 #reset metrics taable
 database.cleanUp()
