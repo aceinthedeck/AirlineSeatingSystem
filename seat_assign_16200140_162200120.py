@@ -313,7 +313,7 @@ if len(sys.argv)!=2:
 	dbName=sys.argv[1]
 	bookingsFile=sys.argv[2]
 else:
-	print("Insufficient number of command line arguments.")
+	print("Insufficient/Extra number of command line arguments.")
 	print("The correct format is <database name> <bookings csv file name>")
 	exit()
 
@@ -334,15 +334,36 @@ database.cleanUp()
 
 booking=seatAllocator(rows,cols,dbName)
 booking.seatChars=database.seatChars
-booking.printInfo()
 
 
-totalEmptySeats=database.getRemainingSeats()
-print('remaining seats: {}'.format(totalEmptySeats))
+
+
 
 readCSV=readCSV(bookingsFile)
 readCSV.readFile()
 
 for row in readCSV.bookingData:
-	booking.bookSeats(int(row[1]),row[0])
+	try:
+		numberOfSeats=int(row[1])
+	except ValueError as er:
+		print("Seats should be a number. Please fix the csv file and try again")
+		exit()
+	if numberOfSeats<=0:
+		print("Seats cannot be less than or equal to zero. Please fix the csv file and try again")
+		exit()
+
+
+booking.printInfo()
+totalEmptySeats=database.getRemainingSeats()
+print('remaining seats: {}'.format(totalEmptySeats))
+
+for row in readCSV.bookingData:
+	try:
+		numberOfSeats=int(row[1])
+	except ValueError as er:
+		print("Seats should be a number.")
+	if numberOfSeats<=0:
+		print("Seats cannot be less than or equal to zero")
+	else:
+		booking.bookSeats(int(row[1]),row[0])
 	

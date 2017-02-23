@@ -90,8 +90,6 @@ for seat in seats:
 
 maxSeats=cols
 
-maxSeats=6
-
 randomNames=getNames(namesCSV)
 createBookingsCSV('test.csv',randomNames,maxSeats)
 
