@@ -52,7 +52,7 @@ There is a seperate program for testing which is __filltable.py__
     4. It also clears and fills the seating table and row_cols table.
 
 __Usage__:
-The file has following variables
+The file has following variables..
     Line 82: testCSV
     Line 83: fileName
     Line 84: seats
