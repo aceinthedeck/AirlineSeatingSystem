@@ -2,7 +2,7 @@
 Analytics Research And Implementation
 
 ##Declaration
-This project is work of the following team members:
+This project is work of the following team members:  
 
 | Name              | Student ID   |
 | ------------------|:-------------|
@@ -62,17 +62,15 @@ There is a seperate program for testing which is __filltable.py__
     4. It also clears and fills the seating table and row_cols table.
 
 __Usage__:
-The file has following variables  
-    Line 82: testCSV  
-    Line 83: fileName  
-    Line 84: seats  
-    Line 85: totalRows  
-    Line 91: maxSeats  
+The program take following command line arguments
+```
+    filltable.py <testCSV> <fileName> <seats> <totalRows> <maxSeats>  
+``` 
 
 * __testCSV__ is the desired name of the output csv. By default it is set to 'test.csv'
 * __fileName__ is the name of the database. By default it is set to 'data.db'
-* __seats__ variable determines the seats in a row eg 'ABCD' is a valid value
-* __totalRows__ variable sets the database to the number of rows available.
-* __maxSeats__ is a variable which determines the random number which will be generated to fill the csv file. This is the maximum value which the random number can take. By default it is set to number of seats in a row. eg for seats='ABCD' the maxSeats would be set to 4 by default.
+* __seats__ determines the seats in a row eg 'ABCD' is a valid value
+* __totalRows__ sets the database to the number of rows available.
+* __maxSeats__ determines the random number which will be generated to fill the csv file. This is the maximum value which the random number can take. By default it is set to number of seats in a row. eg for seats='ABCD' the maxSeats would be set to 4 by default. For default value it should be set to 0
 
 

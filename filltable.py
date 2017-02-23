@@ -1,6 +1,7 @@
 import sqlite3
 import csv
 import random
+import sys
 
 
 
@@ -89,6 +90,24 @@ for seat in seats:
 	cols+=1
 
 maxSeats=cols
+
+
+if len(sys.argv)!=2:
+	testCSV=sys.argv[1]
+	fileName=sys.argv[2]
+	seats=sys.argv[3]
+	totalRows=int(sys.argv[4])
+	maximumSeats=int(sys.argv[5])
+	if maximumSeats==0:
+		maxSeats=cols
+	else:
+		maxSeats=maximumSeats
+
+else:
+	print("Insufficient/Extra number of command line arguments.")
+	print("The correct format is <output csv file name> <database file name> <seats in row eg ABCD> <total number of rows> <maximum seats a peroson can book>")
+	exit()
+
 
 randomNames=getNames(namesCSV)
 createBookingsCSV(testCSV,randomNames,maxSeats)
