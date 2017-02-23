@@ -34,8 +34,10 @@ __readCSV__: This class connects and read information from the CSV file
 
 ###3. Running The Program
 
-The program can be run by giving the following command  
+The program can be run by giving the following command 
+``` 
     main.py data.db bookings.csv  
+```
 where __main.py__ is the name of the program, __data.db__ is the name of the SQLite database and __bookings.csv__ contains the bookings data
 
 ###4. CSV file structure
