@@ -9,6 +9,11 @@ This project is work of the following team members:
 | Ashish Kumar      | 16200120     |
 | Apoorva Taneja    | 16200140     |
 
+
+#### Introduction
+
+This algorithm has been designed for allocating airplane seats to passengers. It reads the plane's seating plan from an SQL database, picks the booking information from a csv file and then implements the algorithm to allocate seats to passengers - together if possible and split up where necessary.
+
 ###1.Database Structure
 
 The program assumes the following database structure:
