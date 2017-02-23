@@ -52,12 +52,12 @@ There is a seperate program for testing which is __filltable.py__
     4. It also clears and fills the seating table and row_cols table.
 
 __Usage__:
-... The file has following variables
-... Line 82: testCSV
-... Line 83: fileName
-... Line 84: seats
-... Line 85: totalRows
-... Line 91: maxSeats
+The file has following variables
+    Line 82: testCSV
+    Line 83: fileName
+    Line 84: seats
+    Line 85: totalRows
+    Line 91: maxSeats
 
 * testCSV is the desired name of the output csv. By default it is set to 'test.csv'
 * fileName is the name of the database. By default it is set to 'data.db'
