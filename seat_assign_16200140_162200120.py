@@ -319,6 +319,9 @@ rows=database.getRows()
 cols=database.getColumns()
 
 
+for args in sys.argv:
+	print(args)
+
 #reset metrics taable
 database.cleanUp()
 
