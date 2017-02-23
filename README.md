@@ -42,7 +42,7 @@ where main.py is the name of the program, data.db is the name of the SQLite data
 
 The program assumes that there are two columns in the CSV file. First coloumn contains the name of the passenger and the second column indicates the number of seats requested by the passenger in the first column
 
-3.Sample Testing
+###5.Sample Testing
 
 There is a seperate program for testing which is __filltable.py__
 
@@ -59,10 +59,10 @@ Line 84: seats
 Line 85: totalRows
 Line 91: maxSeats
 
--testCSV is the desired name of the output csv. By default it is set to 'test.csv'
--fileName is the name of the database. By default it is set to 'data.db'
--seats variable determines the seats in a row eg 'ABCD' is a valid value
--totalRows variable sets the database to the number of rows available.
--maxSeats is a variable which determines the random number which will be generated to fill the csv file. This is the maximum value which the random number can take. By default it is set to number of seats in a row. eg for seats='ABCD' the maxSeats would be set to 4 by default.
+    -testCSV is the desired name of the output csv. By default it is set to 'test.csv'
+    -fileName is the name of the database. By default it is set to 'data.db'
+    -seats variable determines the seats in a row eg 'ABCD' is a valid value
+    -totalRows variable sets the database to the number of rows available.
+    -maxSeats is a variable which determines the random number which will be generated to fill the csv file. This is the maximum value which the random number can take. By default it is set to number of seats in a row. eg for seats='ABCD' the maxSeats would be set to 4 by default.
 
 
