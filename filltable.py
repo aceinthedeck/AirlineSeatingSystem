@@ -43,7 +43,7 @@ def fillTable(fileName,row,seat):
 def fillRowsColsTable(fileName,row,seats):
 	conn=sqlite3.connect(fileName)
 	c=conn.cursor()
-	cmd='Update rows_cols set nrows=(?) and seats=(?)'
+	cmd='Update rows_cols set nrows=(?), seats=(?)'
 	try:
 		c.execute(cmd,(row,seats))
 		conn.commit()
@@ -59,12 +59,12 @@ def fillRowsColsTable(fileName,row,seats):
 		print(er.message)
 		conn.close()
 
-def createBookingsCSV(fileName,nameList):
+def createBookingsCSV(fileName,nameList,maxSeats):
 
 	with open(fileName,'w',newline='') as csvFile:
 		fileWriter=csv.writer(csvFile, delimiter=',', quotechar='|', quoting=csv.QUOTE_MINIMAL)
 		for name in nameList:
-			fileWriter.writerow([name[0],random.randint(1,5)])
+			fileWriter.writerow([name[0],random.randint(1,maxSeats)])
 
 
 def getNames(fileName):
@@ -81,14 +81,22 @@ def getNames(fileName):
 randomNames=[]
 namesCSV='names.csv'
 fileName='data.db'
-seats='ABCDE'
-totalRows=20
+seats='ABCD'
+totalRows=15
 cols=0
 
-randomNames=getNames(namesCSV)
-createBookingsCSV('test.csv',randomNames)
+for seat in seats:
+	cols+=1
 
-print("Testfile created")
+maxSeats=cols
+
+maxSeats=6
+
+randomNames=getNames(namesCSV)
+createBookingsCSV('test.csv',randomNames,maxSeats)
+
+print("Test file created")
+print("Updating database.....")
 
 clearSeatingTable(fileName)
 

@@ -122,11 +122,8 @@ class database(object):
 		c=conn.cursor()
 		cmd='Select row,count(seat) as numOfSeats from seating  where name="" group by row  having numOfSeats>=(?)'
 		try:
-			rowsCount=c.execute(cmd,(requiredSeats,))
-			if rowsCount>0:
-				rowNumber=c.fetchone()[0]
-			else:
-				rowNumber=-1
+			c.execute(cmd,(requiredSeats,))
+			rowNumber=c.fetchone()[0]
 			conn.close()
 			return rowNumber
 		except sqlite3.Error as er:
@@ -311,16 +308,6 @@ class seatAllocator(database):
 			self.bookingsRefused+=numberOfSeats
 			database.updateRefusedBookings(numberOfSeats)
 			print("booking refused till now {}".format(self.bookingsRefused))
-		
-
-
-
-
-
-
-
-
-
 
 if len(sys.argv)!=2:
 	dbName=sys.argv[1]
