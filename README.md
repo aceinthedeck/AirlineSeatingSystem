@@ -48,8 +48,8 @@ The program assumes that there are two columns in the CSV file. First coloumn co
 
 There is a seperate program for testing which is __filltable.py__
 
-    1. The file reads the csv file names.csv.
-    2. The file updates the database data.db
+    1. The program reads the csv file names.csv.
+    2. The program updates the database data.db
     3. It generates a test.csv file with random names and bookings.
     4. It also clears and fills the seating table and row_cols table.
 
