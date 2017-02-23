@@ -34,9 +34,9 @@ __readCSV__: This class connects and read information from the CSV file
 
 ###3. Running The Program
 
-The program can be run by giving the following command
-main.py data.db bookings.csv
-where main.py is the name of the program, data.db is the name of the SQLite database and bookings.csv contains the bookings data
+The program can be run by giving the following command  
+    main.py data.db bookings.csv  
+where __main.py__ is the name of the program, __data.db__ is the name of the SQLite database and __bookings.csv__ contains the bookings data
 
 ###4. CSV file structure
 
@@ -59,10 +59,10 @@ The file has following variables
     Line 85: totalRows  
     Line 91: maxSeats  
 
-* testCSV is the desired name of the output csv. By default it is set to 'test.csv'
-* fileName is the name of the database. By default it is set to 'data.db'
-* seats variable determines the seats in a row eg 'ABCD' is a valid value
-* totalRows variable sets the database to the number of rows available.
-* maxSeats is a variable which determines the random number which will be generated to fill the csv file. This is the maximum value which the random number can take. By default it is set to number of seats in a row. eg for seats='ABCD' the maxSeats would be set to 4 by default.
+* __testCSV__ is the desired name of the output csv. By default it is set to 'test.csv'
+* __fileName__ is the name of the database. By default it is set to 'data.db'
+* __seats__ variable determines the seats in a row eg 'ABCD' is a valid value
+* __totalRows__ variable sets the database to the number of rows available.
+* __maxSeats__ is a variable which determines the random number which will be generated to fill the csv file. This is the maximum value which the random number can take. By default it is set to number of seats in a row. eg for seats='ABCD' the maxSeats would be set to 4 by default.
 
 
