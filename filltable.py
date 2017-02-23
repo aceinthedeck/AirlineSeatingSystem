@@ -79,19 +79,19 @@ def getNames(fileName):
 		print("Unable to open the file containing random names")
 
 randomNames=[]
-namesCSV='names.csv'
+testCSV='test.csv'
 fileName='data.db'
 seats='ABCD'
 totalRows=15
 cols=0
-
+namesCSV='names.csv'
 for seat in seats:
 	cols+=1
 
 maxSeats=cols
 
 randomNames=getNames(namesCSV)
-createBookingsCSV('test.csv',randomNames,maxSeats)
+createBookingsCSV(testCSV,randomNames,maxSeats)
 
 print("Test file created")
 print("Updating database.....")
